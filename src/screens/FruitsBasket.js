@@ -27,7 +27,6 @@ export default class FruitsBasket extends Component {
   componentWillMount() {
     axios.get("https://api-pesada.herokuapp.com/fruits").then(res => {
       this.setState({ fruits: res.data.fruits });
-      console.log("res", res);
     });
   }
 

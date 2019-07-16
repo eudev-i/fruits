@@ -20,3 +20,25 @@ export function imgFruits(name) {
       return require("../images/papaya.jpg");
   }
 }
+
+export function imgFruitsQuant(type) {
+  switch (type) {
+    case "orange":
+      return require("../images/orange.jpg");
+
+    case "strawberry":
+      return require("../images/strawberry.jpg");
+
+    case "mango":
+      return require("../images/mango.jpg");
+
+    case "banana":
+      return require("../images/banana.jpg");
+
+    case "melon":
+      return require("../images/melon.jpg");
+
+    case "papaya":
+      return require("../images/papaya.jpg");
+  }
+}
