@@ -12,7 +12,7 @@ import {
 const width = Dimensions.get("screen").width;
 const height = Dimensions.get("screen").height;
 
-export default class Home extends Component {
+export default class DetailsFruits extends Component {
   fruitsInBasket = () => {
     this.props.navigation.navigate("FruitsBasket");
   };
@@ -30,24 +30,7 @@ export default class Home extends Component {
         />
 
         <View style={styles.content}>
-          <View style={styles.areaLogo}>
-            <Image
-              source={require("../images/logo.jpg")}
-              style={styles.imgLogo}
-            />
-          </View>
-
-          <TouchableOpacity activeOpacity={0.7} onPress={this.fruitsInBasket}>
-            <View style={styles.button}>
-              <Text style={styles.text}>Frutas na cesta</Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity activeOpacity={0.7} onPress={this.fruitsQuantities}>
-            <View style={styles.button}>
-              <Text style={styles.text}>Frutas e quantidades na cesta</Text>
-            </View>
-          </TouchableOpacity>
+          <Text style={styles.text}>Detalhes da fruta</Text>
         </View>
       </View>
     );
@@ -68,23 +51,6 @@ const styles = StyleSheet.create({
     width: 300,
     height: 400,
     position: "absolute",
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  imgLogo: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-    borderWidth: 3,
-    borderColor: "#fff",
-    marginBottom: 50
-  },
-  button: {
-    width: 300,
-    height: 60,
-    borderRadius: 20,
-    backgroundColor: "#3f8c2a",
-    marginBottom: 20,
     alignItems: "center",
     justifyContent: "center"
   },

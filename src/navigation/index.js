@@ -2,12 +2,14 @@ import { createStackNavigator, createAppContainer } from "react-navigation";
 import Home from "../screens/Home";
 import FruitsBasket from "../screens/FruitsBasket";
 import FruitsQuantities from "../screens/FruitsQuantities";
+import DetailsFruits from "../screens/DetailsFruits";
 
 const AppNavigator = createStackNavigator(
   {
     Home,
     FruitsBasket,
-    FruitsQuantities
+    FruitsQuantities,
+    DetailsFruits
   },
   {
     initialRouteName: "Home",
