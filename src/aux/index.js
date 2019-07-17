@@ -21,6 +21,7 @@ export function imgFruits(name) {
   }
 }
 
+// Estrutura de condição para inserir a imagem da fruta de acordo com o type trago pela API
 export function imgFruitsQuant(type) {
   switch (type) {
     case "orange":

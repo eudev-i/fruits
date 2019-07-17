@@ -13,6 +13,7 @@ import {
   FlatList
 } from "react-native";
 
+// Pegando todo o tamanho da tela do celular
 const width = Dimensions.get("screen").width;
 const height = Dimensions.get("screen").height;
 
@@ -24,18 +25,16 @@ export default class FruitsBasket extends Component {
     };
   }
 
-  componentWillMount() {
+  // Consumindo dados da API
+  componentDidMount() {
     axios.get("https://api-pesada.herokuapp.com/fruits").then(res => {
       this.setState({ fruits: res.data.fruits });
     });
   }
 
+  // Direcionando para a tela principal
   home = () => {
     this.props.navigation.navigate("Home");
-  };
-
-  detailsFruits = () => {
-    this.props.navigation.navigate("DetailsFruits");
   };
 
   render() {
@@ -54,22 +53,15 @@ export default class FruitsBasket extends Component {
         </View>
 
         <View style={styles.content}>
+          {/* Descarregando dados da API */}
           <FlatList
             data={this.state.fruits}
-            keyExtractor={item => item.id}
+            keyExtractor={item => item.name}
             numColumns={2}
             renderItem={({ item }) => (
               <View style={styles.fruit}>
                 <Image source={imgFruits(item.name)} style={styles.imgFruits} />
                 <Text style={styles.nameFruits}>{item.name}</Text>
-                <View style={styles.btnDetails}>
-                  <TouchableOpacity
-                    activeOpacity={0.9}
-                    onPress={this.detailsFruits}
-                  >
-                    <Text style={styles.textDetails}>DETALHES</Text>
-                  </TouchableOpacity>
-                </View>
               </View>
             )}
           />
@@ -139,18 +131,5 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "#8f8f8f",
     marginBottom: 5
-  },
-  btnDetails: {
-    width: 140,
-    height: 30,
-    borderRadius: 4,
-    backgroundColor: "#ffe2c9",
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  textDetails: {
-    color: "#F5923B",
-    fontSize: 14,
-    fontWeight: "bold"
   }
 });

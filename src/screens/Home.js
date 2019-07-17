@@ -9,14 +9,17 @@ import {
   TouchableOpacity
 } from "react-native";
 
+// Pegando todo o tamanho da tela do celular
 const width = Dimensions.get("screen").width;
 const height = Dimensions.get("screen").height;
 
 export default class Home extends Component {
+  // Direcionando para a tela de frutas na cesta
   fruitsInBasket = () => {
     this.props.navigation.navigate("FruitsBasket");
   };
 
+  // Direcionando para a tela de frutas e quantidades
   fruitsQuantities = () => {
     this.props.navigation.navigate("FruitsQuantities");
   };
@@ -36,12 +39,14 @@ export default class Home extends Component {
           />
 
           <View style={styles.areaButtons}>
+            {/* Botão que direciona para a tela de frutas na cesta */}
             <TouchableOpacity activeOpacity={0.7} onPress={this.fruitsInBasket}>
               <View style={styles.button}>
                 <Text style={styles.text}>FRUTAS NA CESTA</Text>
               </View>
             </TouchableOpacity>
 
+            {/* Botão que direciona para a tela de frutas ne quantidades */}
             <TouchableOpacity
               activeOpacity={0.7}
               onPress={this.fruitsQuantities}
