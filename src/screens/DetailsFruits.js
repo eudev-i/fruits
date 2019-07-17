@@ -50,9 +50,8 @@ export default class DetailsFruits extends Component {
               style={styles.espaco}
             />
           </TouchableOpacity>
-          <Text style={styles.textHeader}>Detalhes</Text>
+          <Text style={styles.textHeader}>Informações do cliente</Text>
         </View>
-
         <View style={styles.content}>
           <View style={styles.detail}>
             <View style={styles.areaImg} />
@@ -100,8 +99,17 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     padding: 10,
     marginTop: 20,
-    borderWidth: 1,
-    borderColor: "#000"
+    borderWidth: 0.3,
+    borderColor: "#c4c4c4",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 5
+    },
+    shadowOpacity: 0.34,
+    shadowRadius: 6.27,
+
+    elevation: 6
   },
   areaImg: {
     width: 300,

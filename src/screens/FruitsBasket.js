@@ -102,14 +102,13 @@ const styles = StyleSheet.create({
   content: {
     width: width,
     height: height,
-    paddingLeft: 20,
     paddingTop: 10,
-    paddingRight: 10,
-    paddingBottom: 120
+    paddingBottom: 120,
+    paddingLeft: 10
   },
   fruit: {
-    width: 150,
-    height: 280,
+    width: 156,
+    height: 223,
     backgroundColor: "#fff",
     flexDirection: "column",
     borderRadius: 10,
@@ -117,21 +116,32 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginLeft: 10,
     marginTop: 20,
-    borderWidth: 1,
-    borderColor: "#000"
+    borderWidth: 0.3,
+    borderColor: "#c4c4c4",
+    padding: 6,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 5
+    },
+    shadowOpacity: 0.34,
+    shadowRadius: 6.27,
+
+    elevation: 6
   },
   imgFruits: {
-    width: 130,
+    width: 140,
     height: 150,
-    marginBottom: 10
+    marginBottom: 5,
+    borderRadius: 4
   },
   nameFruits: {
-    fontSize: 24,
-    color: "#9e9e9e",
-    marginBottom: 10
+    fontSize: 14,
+    color: "#8f8f8f",
+    marginBottom: 5
   },
   btnDetails: {
-    width: 110,
+    width: 140,
     height: 30,
     borderRadius: 4,
     backgroundColor: "#ffe2c9",
@@ -140,6 +150,7 @@ const styles = StyleSheet.create({
   },
   textDetails: {
     color: "#F5923B",
-    fontSize: 14
+    fontSize: 14,
+    fontWeight: "bold"
   }
 });
