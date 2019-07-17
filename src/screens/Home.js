@@ -25,29 +25,32 @@ export default class Home extends Component {
     return (
       <View style={styles.container}>
         <Image
-          source={require("../images/fundo.jpg")}
+          source={require("../images/Wallpaper_orange.png")}
           style={styles.imgFundo}
         />
 
         <View style={styles.content}>
-          <View style={styles.areaLogo}>
-            <Image
-              source={require("../images/logo.jpg")}
-              style={styles.imgLogo}
-            />
+          <Image
+            source={require("../images/img_fruits-app.png")}
+            style={styles.imgLogo}
+          />
+
+          <View style={styles.areaButtons}>
+            <TouchableOpacity activeOpacity={0.7} onPress={this.fruitsInBasket}>
+              <View style={styles.button}>
+                <Text style={styles.text}>FRUTAS NA CESTA</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              activeOpacity={0.7}
+              onPress={this.fruitsQuantities}
+            >
+              <View style={styles.button}>
+                <Text style={styles.text}>FRUTAS E QUANTIDADES NA CESTA</Text>
+              </View>
+            </TouchableOpacity>
           </View>
-
-          <TouchableOpacity activeOpacity={0.7} onPress={this.fruitsInBasket}>
-            <View style={styles.button}>
-              <Text style={styles.text}>Frutas na cesta</Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity activeOpacity={0.7} onPress={this.fruitsQuantities}>
-            <View style={styles.button}>
-              <Text style={styles.text}>Frutas e quantidades na cesta</Text>
-            </View>
-          </TouchableOpacity>
         </View>
       </View>
     );
@@ -58,38 +61,42 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    backgroundColor: "#000"
   },
   imgFundo: {
     width: width,
     height: height
   },
   content: {
-    width: 300,
+    width: 400,
     height: 400,
     position: "absolute",
     alignItems: "center",
     justifyContent: "center"
   },
   imgLogo: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-    borderWidth: 3,
-    borderColor: "#fff",
-    marginBottom: 50
+    width: 300,
+    height: 200,
+    marginBottom: 50,
+    position: "absolute",
   },
   button: {
-    width: 300,
-    height: 60,
-    borderRadius: 20,
-    backgroundColor: "#3f8c2a",
-    marginBottom: 20,
+    width: 325,
+    height: 45,
+    borderRadius: 4,
+    backgroundColor: "#fff",
+    marginBottom: 15,
     alignItems: "center",
     justifyContent: "center"
   },
   text: {
-    fontSize: 16,
-    color: "#fff"
+    fontSize: 14,
+    color: "#F5923B"
+  },
+  areaButtons: {
+    width: 320,
+    height: 120,
+    marginTop: 540
   }
 });

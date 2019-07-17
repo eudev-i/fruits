@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import Icon from "react-native-vector-icons/Ionicons";
+import axios from "axios";
+import { imgFruitsQuant } from "../aux";
 import {
   Platform,
   StyleSheet,
@@ -6,31 +9,55 @@ import {
   Image,
   Dimensions,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
+  FlatList
 } from "react-native";
 
 const width = Dimensions.get("screen").width;
 const height = Dimensions.get("screen").height;
 
 export default class DetailsFruits extends Component {
-  fruitsInBasket = () => {
-    this.props.navigation.navigate("FruitsBasket");
+  constructor() {
+    super();
+    this.state = {
+      basket: []
+    };
+  }
+
+  componentWillMount() {
+    axios.get("https://api-pesada.herokuapp.com").then(res => {
+      this.setState({ basket: res.data.basket });
+    });
+  }
+
+  home = () => {
+    this.props.navigation.navigate("Home");
   };
 
-  fruitsQuantities = () => {
-    this.props.navigation.navigate("FruitsQuantities");
+  detailsFruits = () => {
+    this.props.navigation.navigate("DetailsFruits");
   };
 
   render() {
     return (
       <View style={styles.container}>
-        <Image
-          source={require("../images/fundo.jpg")}
-          style={styles.imgFundo}
-        />
+        <View style={styles.header}>
+          <TouchableOpacity activeOpacity={0.9} onPress={this.home}>
+            <Icon
+              name="md-arrow-round-back"
+              size={20}
+              color={"#F5923B"}
+              style={styles.espaco}
+            />
+          </TouchableOpacity>
+          <Text style={styles.textHeader}>Detalhes</Text>
+        </View>
 
         <View style={styles.content}>
-          <Text style={styles.text}>Detalhes da fruta</Text>
+          <View style={styles.detail}>
+            <View style={styles.areaImg} />
+            <Text style={styles.texto}>Nome</Text>
+          </View>
         </View>
       </View>
     );
@@ -40,22 +67,51 @@ export default class DetailsFruits extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center"
+    backgroundColor: "#FFF"
   },
-  imgFundo: {
+  header: {
     width: width,
-    height: height
+    height: 40,
+    alignItems: "center",
+    flexDirection: "row",
+    paddingLeft: 15,
+    paddingTop: 10
+  },
+  espaco: {
+    marginRight: 50
+  },
+  textHeader: {
+    color: "#F5923B",
+    fontSize: 16
   },
   content: {
-    width: 300,
-    height: 400,
-    position: "absolute",
-    alignItems: "center",
-    justifyContent: "center"
+    width: width,
+    height: height,
+    paddingLeft: 20,
+    paddingTop: 10,
+    paddingRight: 20,
+    paddingBottom: 120,
+    alignItems: "center"
   },
-  text: {
-    fontSize: 16,
-    color: "#fff"
+  detail: {
+    width: 320,
+    height: 210,
+    backgroundColor: "#fff",
+    borderRadius: 4,
+    padding: 10,
+    marginTop: 20,
+    borderWidth: 1,
+    borderColor: "#000"
+  },
+  areaImg: {
+    width: 300,
+    height: 150,
+    borderRadius: 4,
+    marginBottom: 10,
+    backgroundColor: "#9e9e9e"
+  },
+  texto: {
+    color: "#9e9e9e",
+    fontSize: 24
   }
 });

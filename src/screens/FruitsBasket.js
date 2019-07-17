@@ -45,12 +45,12 @@ export default class FruitsBasket extends Component {
           <TouchableOpacity activeOpacity={0.9} onPress={this.home}>
             <Icon
               name="md-arrow-round-back"
-              size={30}
-              color={"#fff"}
+              size={20}
+              color={"#F5923B"}
               style={styles.espaco}
             />
           </TouchableOpacity>
-          <Text style={styles.textHeader}>Frutas na cesta</Text>
+          <Text style={styles.textHeader}>Informações do cliente</Text>
         </View>
 
         <View style={styles.content}>
@@ -67,7 +67,7 @@ export default class FruitsBasket extends Component {
                     activeOpacity={0.9}
                     onPress={this.detailsFruits}
                   >
-                    <Text style={styles.textDetails}>Detalhes</Text>
+                    <Text style={styles.textDetails}>DETALHES</Text>
                   </TouchableOpacity>
                 </View>
               </View>
@@ -82,7 +82,7 @@ export default class FruitsBasket extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#3f8c2a"
+    backgroundColor: "#fff"
   },
   header: {
     width: width,
@@ -96,15 +96,15 @@ const styles = StyleSheet.create({
     marginRight: 50
   },
   textHeader: {
-    color: "#fff",
-    fontSize: 22
+    color: "#F5923B",
+    fontSize: 16
   },
   content: {
     width: width,
     height: height,
     paddingLeft: 20,
     paddingTop: 10,
-    paddingRight: 20,
+    paddingRight: 10,
     paddingBottom: 120
   },
   fruit: {
@@ -116,24 +116,30 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginLeft: 10,
-    marginTop: 20
+    marginTop: 20,
+    borderWidth: 1,
+    borderColor: "#000"
   },
   imgFruits: {
-    width: 110,
+    width: 130,
     height: 150,
     marginBottom: 10
   },
   nameFruits: {
-    fontSize: 20,
-    color: "#000",
+    fontSize: 24,
+    color: "#9e9e9e",
     marginBottom: 10
   },
   btnDetails: {
     width: 110,
     height: 30,
-    borderRadius: 10,
-    backgroundColor: "#def2d8",
+    borderRadius: 4,
+    backgroundColor: "#ffe2c9",
     justifyContent: "center",
     alignItems: "center"
+  },
+  textDetails: {
+    color: "#F5923B",
+    fontSize: 14
   }
 });

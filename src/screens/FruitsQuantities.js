@@ -45,12 +45,12 @@ export default class FruitsQuantities extends Component {
           <TouchableOpacity activeOpacity={0.9} onPress={this.home}>
             <Icon
               name="md-arrow-round-back"
-              size={30}
-              color={"#fff"}
+              size={20}
+              color={"#F5923B"}
               style={styles.espaco}
             />
           </TouchableOpacity>
-          <Text style={styles.textHeader}>Frutas e quantidade</Text>
+          <Text style={styles.textHeader}>Informações do cliente</Text>
         </View>
 
         <View style={styles.content}>
@@ -74,7 +74,7 @@ export default class FruitsQuantities extends Component {
                     activeOpacity={0.9}
                     onPress={this.detailsFruits}
                   >
-                    <Text style={styles.textDetails}>Detalhes</Text>
+                    <Text style={styles.textDetails}>DETALHES</Text>
                   </TouchableOpacity>
                 </View>
               </View>
@@ -89,7 +89,7 @@ export default class FruitsQuantities extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#3f8c2a"
+    backgroundColor: "#FFF"
   },
   header: {
     width: width,
@@ -103,8 +103,8 @@ const styles = StyleSheet.create({
     marginRight: 50
   },
   textHeader: {
-    color: "#fff",
-    fontSize: 22
+    color: "#F5923B",
+    fontSize: 16
   },
   content: {
     width: width,
@@ -123,25 +123,31 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginLeft: 10,
-    marginTop: 20
+    marginTop: 20,
+    borderWidth: 1,
+    borderColor: "#000"
   },
   imgFruits: {
-    width: 110,
+    width: 130,
     height: 150,
     marginBottom: 10
   },
   nameFruits: {
     fontSize: 20,
-    color: "#000",
+    color: "#9e9e9e",
     marginBottom: 10
   },
   btnDetails: {
     width: 110,
     height: 30,
-    borderRadius: 10,
-    backgroundColor: "#def2d8",
+    borderRadius: 4,
+    backgroundColor: "#ffe2c9",
     justifyContent: "center",
     alignItems: "center"
+  },
+  textDetails: {
+    color: "#F5923B",
+    fontSize: 14
   },
   titulo: {
     flexDirection: "row"
